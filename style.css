@@ -35,7 +35,7 @@
 * { box-sizing: border-box; margin:0; padding:0; }
 
 html {
-  scroll-snap-type: y mandatory;
+  /* 강제 스크롤 스냅 제거 */
   scroll-behavior: smooth;
 }
 
@@ -48,10 +48,8 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 
-/* 풀페이지 스냅 전용 클래스 */
+/* 100vh 전용 섹션 */
 .snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   width: 100vw;
   height: 100vh;
   max-width: 100vw;
@@ -108,7 +106,7 @@ a { color: inherit; text-decoration: none; }
   transform-origin: bottom left;
 }
 
-/* 2. Middle Intro Section (1920x1080 맞춤) */
+/* 2. Middle Intro Section (1920x1080) */
 .middle-intro-section {
   position: relative;
   background: #080808;
@@ -192,7 +190,6 @@ a { color: inherit; text-decoration: none; }
   color: #ffffff;
 }
 
-/* 1920x1080에 딱 맞춰 크기와 비율 조정 */
 .intro-center-image {
   position: absolute;
   top: 50%;
@@ -261,7 +258,6 @@ a { color: inherit; text-decoration: none; }
   justify-content: center;
   border-top: 1px solid var(--color-border); 
   box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.9);
-  scroll-snap-align: start;
 }
 
 .work-lines { position:absolute; inset:0; pointer-events:none; z-index:1; }
@@ -359,7 +355,7 @@ a { color: inherit; text-decoration: none; }
 .word.disappeared { opacity: 0; transform: translateY(-10px); text-shadow: none; }
 
 /* 5. Footer */
-.footer-closing { position: relative; z-index: 10; background: var(--color-black); color: var(--color-white-sheet); border-top: 1px solid var(--color-border); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; scroll-snap-align: start; }
+.footer-closing { position: relative; z-index: 10; background: var(--color-black); color: var(--color-white-sheet); border-top: 1px solid var(--color-border); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
 .closing-grid { display: grid; grid-template-columns: 1.6fr 1fr; min-height: 100vh; }
 .contact-panel { padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; border-right: 1px dashed var(--color-border); }
 .contact-block { margin-bottom: 38px; }
