@@ -97,12 +97,15 @@ a { color: inherit; text-decoration: none; }
 
 .hero-video {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none; 
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-height: calc(100vh - var(--top-bar-height));
+  min-width: 177.77vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  
   -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0) 90%);
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0.7) 82%, rgba(0,0,0,0) 90%);
 }
