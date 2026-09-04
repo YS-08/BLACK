@@ -42,6 +42,7 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 
+/* 1. Hero Section */
 .hero-dark {
   position: relative;
   background: var(--color-black);
@@ -93,12 +94,146 @@ a { color: inherit; text-decoration: none; }
   transform-origin: bottom left;
 }
 
-/* 카드 스택 컨테이너 타이밍 조정: Hero가 스크롤로 완전히 지나간 후 순차 탑재 */
+/* 2. Middle Intro Section (1920x1080) */
+.middle-intro-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  border-top: 1px solid var(--color-border);
+}
+
+.intro-banner-strip {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  color: #000000;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+.banner-text-left, .banner-text-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-mark {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.intro-content-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.intro-num-tag {
+  position: absolute;
+  top: 25%;
+  left: 12%;
+  font-family: 'Inter', sans-serif;
+  font-size: 42px;
+  font-weight: 300;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.intro-quote-tag {
+  position: absolute;
+  top: 12%;
+  right: 12%;
+  text-align: right;
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.3;
+  letter-spacing: 2px;
+}
+
+.intro-quote-tag span {
+  color: #888888;
+}
+
+.intro-quote-tag .underline-text {
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.intro-center-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 620px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+  pointer-events: auto;
+}
+
+.intro-center-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.intro-asterisk {
+  position: absolute;
+  bottom: 22%;
+  right: 18%;
+  font-size: 60px;
+  color: #ffffff;
+}
+
+.intro-footer-text {
+  position: absolute;
+  bottom: 12%;
+  left: 12%;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.intro-footer-text .sub-label {
+  font-size: 16px;
+  color: #777777;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.intro-footer-text .main-label {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* 3. Work Stack Section */
 .work-stack-container { 
   position: relative; 
   background: var(--color-black); 
   font-weight: 300;
-  z-index: 2;
+  z-index: 3;
 }
 
 .work-card {
@@ -200,7 +335,8 @@ a { color: inherit; text-decoration: none; }
   100% { height: 36px; }
 }
 
-.scroll-text-container { position: relative; height: 320vh; background: var(--color-black); border-top: 1px solid var(--color-border); z-index: 3; }
+/* 4. Scroll Text Section */
+.scroll-text-container { position: relative; height: 320vh; background: var(--color-black); border-top: 1px solid var(--color-border); z-index: 4; }
 .scroll-text-container-second { border-top: none; }
 .scroll-text-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; padding: 0 8vw; }
 .scroll-text-wrapper { font-size: clamp(22px, 3.2vw, 42px); font-weight: 500; line-height: 1.65; letter-spacing: -0.03em; word-break: keep-all; text-align: justify; }
@@ -209,6 +345,7 @@ a { color: inherit; text-decoration: none; }
 .word.active { opacity: 1; transform: translateY(0); text-shadow: 0 0 12px rgba(255, 255, 255, 0.25); }
 .word.disappeared { opacity: 0; transform: translateY(-10px); text-shadow: none; }
 
+/* 5. Footer */
 .footer-closing { position: relative; z-index: 10; background: var(--color-black); color: var(--color-white-sheet); border-top: 1px solid var(--color-border); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
 .closing-grid { display: grid; grid-template-columns: 1.6fr 1fr; min-height: 100vh; }
 .contact-panel { padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; border-right: 1px dashed var(--color-border); }
@@ -228,15 +365,14 @@ a { color: inherit; text-decoration: none; }
   :root {
     --hero-padding-left: calc(6vw + 10px);
   }
+  .intro-center-image { width: 80vw; height: 50vh; }
+  .intro-num-tag { top: 10%; left: 5%; font-size: 28px; }
+  .intro-quote-tag { top: 10%; right: 5%; font-size: 16px; }
+  .banner-text-left, .banner-text-right { font-size: 9px; gap: 8px; }
   .work-main { grid-template-columns:1fr; }
   .work-image-col { min-height:320px; }
   .closing-grid { grid-template-columns: 1fr; }
   .contact-panel { padding: 64px 32px; border-right: none; border-bottom: 1px dashed var(--color-border); }
   .meta-panel { min-height: 400px; padding: 32px 0; }
   .meta-panel img { height: auto; max-height: 60vh; width: 90%; }
-  
-  .hero-title-overlay {
-    bottom: calc(4vh + 0px);
-    left: var(--hero-padding-left);
-  }
 }
